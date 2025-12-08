@@ -4,13 +4,13 @@ import lombok.Data;
 
 @Data
 public class LoanAmortizationResponse {
-    private long newAmortizedValue;
-    private double tenureMonths;
-    private long suggestedEmi;
-    private long monthlyExpenses;
-    private long savingsPercent;
-    private long existingEmi;
-    private long outstandingPrincipal;
-    private long monthlyIncome;
-    private long monthlySavings;
+    private long newAmortizedValue; //loan
+    private double tenureMonths; //loan
+    private long suggestedEmi; //acc
+    private long monthlyExpenses; //tranApi
+    private long savingsPercent; //loan
+    private long existingEmi; //loanAPI
+    private long outstandingPrincipal; //loanAPI
+    private long monthlyIncome; //userInput
+    private long monthlySavings; //tranAPI
 }

@@ -21,7 +21,7 @@ public class LoanRepaymentService {
         this.webClient = builder.baseUrl("https://api.tcsbancs.com/external/bancs/GBP/loans/V2/v1/loans").build();
     }
 
-    public Mono<LoanRepaymentResponse> getLoanRepayment(LoanRepaymentRequest req) {
+    public static Mono<LoanRepaymentResponse> getLoanRepayment(LoanRepaymentRequest req) {
 
         return webClient.get()
                 .uri(uriBuilder -> uriBuilder
