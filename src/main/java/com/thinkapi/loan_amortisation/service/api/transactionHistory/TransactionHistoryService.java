@@ -56,12 +56,47 @@ public class TransactionHistoryService {
                     System.out.println("Account API ERROR → Using fallback JSON");
 
                     String fallbackJson = """
-                    {
-                        "status": "SUCCESS",
-                        "balance": 25000.50,
-                        "currency": "INR",
-                        "accountReference": "TEST123"
-                    }
+                            {
+                              "pageSize": 22,
+                              "pageNum": 1,
+                              "noOfPages": 1,
+                              "totalNoOfRecords": 2,
+                              "hasNext": "N",
+                              "transactionHistory": [
+                                {
+                                  "accountCurrency": "USD",
+                                  "debitCreditFlag": 2,
+                                  "movementAmount": 15,
+                                  "netBalance": 9986,
+                                  "transactionDescription": "272-10128:Loan Rollover Fee Disbursement Of 101000000105302",
+                                  "transactionDate": "20290830",
+                                  "transactionId": 10128,
+                                  "transactionType": 272,
+                                  "valueDate": "20290830",
+                                  "transactionRef": "272-10128",
+                                  "entityCode": "GPRDTTSTOU",
+                                  "chequeNumber": 0,
+                                  "transactionDateTime": "20230403122519",
+                                  "extensibilityMap": null
+                                },
+                                {
+                                  "accountCurrency": "USD",
+                                  "debitCreditFlag": 1,
+                                  "movementAmount": 10001,
+                                  "netBalance": 10001,
+                                  "transactionDescription": "272-10128:Loan disbursement 101000000105302",
+                                  "transactionDate": "20290830",
+                                  "transactionId": 10128,
+                                  "transactionType": 272,
+                                  "valueDate": "20290830",
+                                  "transactionRef": "272-10128",
+                                  "entityCode": "GPRDTTSTOU",
+                                  "chequeNumber": 0,
+                                  "transactionDateTime": "20230403122519",
+                                  "extensibilityMap": null
+                                }
+                              ]
+                            }
                     """;
 
                     try {

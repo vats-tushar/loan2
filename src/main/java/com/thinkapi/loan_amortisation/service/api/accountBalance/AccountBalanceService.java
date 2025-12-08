@@ -22,7 +22,7 @@ public class AccountBalanceService {
     }
 
 
-    public Mono<AccountBalanceResponse> getAccountBalance(AccountBalanceRequest req) {
+    public static Mono<AccountBalanceResponse> getAccountBalance(AccountBalanceRequest req) {
 
         return webClient.get()
                 .uri(uriBuilder -> uriBuilder
@@ -44,12 +44,34 @@ public class AccountBalanceService {
                     System.out.println("Account API ERROR → Using fallback JSON");
 
                     String fallbackJson = """
-                    {
-                        "status": "SUCCESS",
-                        "balance": 25000.50,
-                        "currency": "INR",
-                        "accountReference": "TEST123"
-                    }
+                            {
+                              "pageSize": 22,
+                              "pageNum": 1,
+                              "noOfPages": 1,
+                              "totalNoOfRecords": 1,
+                              "hasNext": "N",
+                              "accountBalanceDetails": {
+                                "balance": {
+                                  "creditLine": {
+                                    "amount": {
+                                      "creditAmount": 0,
+                                      "currency": "USD"
+                                    },
+                                    "included": "true",
+                                    "balanceType": "Available"
+                                  },
+                                  "amount": {
+                                    "accountBalance": 9986,
+                                    "balanceAmountCurrency": "USD"
+                                  },
+                                  "accountReference": "999100200107374",
+                                  "dateTime": "20251208",
+                                  "type": "Information",
+                                  "creditDebitIndicator": "Credit"
+                                },
+                                "extensibilityMap": null
+                              }
+                            }
                     """;
 
                     try {
