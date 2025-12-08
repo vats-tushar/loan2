@@ -28,6 +28,11 @@ public class LoanAmortizationService {
         System.out.println(repaySchedule.getLoanDetails());
     }
 
-
+    public double suggestEmiIncrease(double newSalary, double acBalance, TransactionHistoryResponse tranHist, double balanceCushion){
+        double sumOfDebits =1.0;
+        double sumOfCredits =1.0;
+        double tempSugg = newSalary + acBalance + sumOfCredits - sumOfDebits -  balanceCushion;
+        return tempSugg;
+    }
 
 }
