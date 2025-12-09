@@ -22,7 +22,7 @@ public class AccountBalanceService {
     }
 
 
-    public static Mono<AccountBalanceResponse> getAccountBalance(AccountBalanceRequest req) {
+    public Mono<AccountBalanceResponse> getAccountBalance(AccountBalanceRequest req) {
 
         return webClient.get()
                 .uri(uriBuilder -> uriBuilder

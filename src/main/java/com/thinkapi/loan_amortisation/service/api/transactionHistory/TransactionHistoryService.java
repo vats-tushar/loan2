@@ -21,7 +21,7 @@ public class TransactionHistoryService {
         this.webClient = builder.baseUrl("https://api.tcsbancs.com/external/BaNCS/Banking/AccountManagement/v2/v1/accountManagement/account").build();
     }
 
-    public static Mono<TransactionHistoryResponse> getTransactionHistory(TransactionHistoryRequest req) {
+    public Mono<TransactionHistoryResponse> getTransactionHistory(TransactionHistoryRequest req) {
 
         return webClient.get()
                 .uri(uriBuilder -> uriBuilder

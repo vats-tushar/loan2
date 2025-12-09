@@ -5,25 +5,11 @@ import lombok.Data;
 @Data
 public class LoanAmortizationRequest {
 
-    // Path variable
+    // Request params
     private String loanReference;
     private String accountReference;
+    private double newSalary;
+    private double balanceCushion;
 
-    // Query params
-    private Integer repayOption;   // 1-default, 2-future
-    private Integer pageSize = 22; // default
-    private Integer pageNum = 1;   // default
-
-    // Headers
-    private Integer userId;
-    private String entity;
-    private Integer languageCode;
-    private Integer channelType;
-    private Integer coRelationId;
-    private Integer uuidSeqNo;
-    private String initiatingSystem;
-    private Integer serviceMode;
-    private String accessToken;
-    private String referenceId;
 }
 
